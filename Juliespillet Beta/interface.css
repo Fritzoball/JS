@@ -1,0 +1,408 @@
+body {
+	background-image: url("images/bg_chill.png");
+	/*font-family: 'Source Sans Pro', sans-serif;*/
+	font-family: 'Patua One', cursive;
+}
+#bonusCounter {
+	height: 5px;
+	z-index: 3;
+
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+
+#bonusCounter progress {
+	background-color: blue;
+		width: 100%;
+	height: 5px;
+}
+
+#statButtonText:hover{
+	text-decoration: underline;
+}
+
+#statisticWindow {
+	display: none;
+}
+
+#divider {
+	height: 60px;
+}
+
+#debugWindow {
+	display: none;
+}
+
+/* FOOTER */
+#footer {
+	color: white;
+	opacity: 0.5;
+	position:absolute;
+	left: 0;
+	right: 0;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	bottom:0;
+	width:200px;
+	height:60px;   /* Height of the footer */
+}
+/* TOOLBAR */
+#toolbar {
+	z-index: 20;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 55px;
+	background-image: url("images/darkest_bg.png");
+	opacity: 0.1;
+	color: white;
+	vertical-align: 50%;
+}
+#toolbarContent {
+	opacity: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	
+	padding-top: 55px;
+}
+
+#bonusButton {
+	z-index: 100;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 10px;
+	margin-left: 750px;
+	float: right;
+	background-image: url("images/bonusbutton.png");
+}
+
+/*UPGRADES*/
+.upgradeButton {
+	color: white;
+	width: 55px;
+	height: 55px;
+	background-image: url("images/upgradeButton.png");
+}
+
+#upgradeBox {
+	width: 300px;
+	margin-top: 60px;
+}
+
+/* SHOP BUTTONS */
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.item_name  {
+	font-size: 18px;
+	
+}
+.item_price {
+	font-size: 15px;
+}
+
+#button_left {
+	
+	float: left;
+	font-family: 'Patua One', cursive;
+	text-align: left;
+}
+#button_right {
+	opacity: 0.8;
+	float: right;
+	margin-top: 8px;
+	font-size: 20px;
+	font-weight: 600;
+}
+.itemButton {
+	color: white;
+	width: 200px;
+	height: 50;
+	background-image: url("images/itembutton_kos.png");
+}
+
+.itemButton2 {
+	color: white;
+	width: 200px;
+	height: 50;
+	background-image: url("images/itembutton_jobb.png");
+}
+.itemCount {
+	font-family: 'Patua One', cursive;
+}
+/*.itemCount {
+	float: right;
+	margin-top: 6px;
+	margin-right: 2px;
+	text-align: center;
+	font-size: 12px;
+}
+*/
+#chillStore {
+	max-width: 200px;
+	float: left;
+}
+
+#workStore {
+	max-width: 200px;
+	float: left;
+}
+
+#storeContainer {
+	width: 100%;
+	min-height: 250px;
+}
+/* VARIABLE DISPLAY */
+
+#mykDisplay {
+	float: left;
+	text-align: center;
+	width: 150px;
+}
+#cashDisplay {
+	float: right;
+	text-align: center;
+	width: 150px;
+}
+
+/* JULIEFACE + INFOBOX */
+
+#textTicker {
+	color: white;
+	margin-top: 10px;
+	width: 300px;
+	float: left;
+	font-size: 18px;
+	text-align: center;
+}
+
+#chillButton {
+	margin-left:2px;
+	width: 145px;
+	height: 50px;
+	background-image: url("images/button_kosetid.png");
+}
+#workButton {
+	width: 145px;
+	height: 50px;
+	background-image: url("images/button_jobbetid.png");
+}
+
+#infoBox {
+	background-image: url("images/darker_bg.png");
+	max-width: 300px;
+	color: white;
+	font-size: 20px;
+}
+#countDisplay {
+
+}
+#tickleClickButton {
+	margin: 0 auto;
+	width: 200px;
+	height: 180px;
+	background-image: url(julie.png);
+	z-index: -1;
+}
+#tickleClickButton:hover {
+	width: 200px;
+	height: 180px;
+	background-image: url(julie2.png);
+}
+#tickleClickButton:active {
+	width: 200px;
+	height: 180px;
+	background-image: url(julie3.png);
+}
+
+#header {
+	position:relative;
+	padding: 3px;
+	margin-bottom:20px;
+}
+#gameTitle {
+	z-index: 120;
+	position: absolute;
+	color: white;
+	text-transform: uppercase;
+	text-shadow: 0px 0px 15px black;
+	margin-bottom: 200px;
+	margin-left: 0px;
+
+}
+
+/* COLUMNNS */
+
+#leftColumn {
+	
+	float:left;
+	width:400px;
+}
+
+#rightColumn {
+	color: white;
+	float:left;
+	width:400px;
+}
+
+#gameFrame {
+	height: 100%;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+
+
+}
+/* STORE DIV */
+
+#store {
+	width: 75%;
+}
+/* HOLIDAY WINDOW */
+#holidaySelect {
+	background-color: grey;
+	z-index: 5;
+	position: absolute;
+	width: 400px;
+	height: 250px;
+	top: 15%; 
+	left: 15%;
+	opacity:1;
+	text-align: center;
+}
+#holidayWindow {
+	background-color: grey;
+	z-index: 5;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0; 
+	left: 0;
+	opacity:1;
+	text-align: center;
+}
+
+
+/* BONUS WINDOW */
+.bonusWindow {
+	display: none;
+	opacity: 1;
+	background-image: url("images/darkest_bg.png");
+	z-index: 14;
+	position: absolute;
+	width: 420px;
+	height: 160px;
+	margin-left: -200px;
+	top: 15%; 
+	opacity:0.1;
+	text-align: center;
+}
+
+#bonusWindowPic {
+	position: absolute;
+	width: 400px;
+	height: 225px;
+	background-image: url("images/bonuspic.png");
+	left: 0px;
+	top:0px;
+}
+
+#bonusWindowPicTimer {
+	width: 100%;
+	height: 25px;
+	position: absolute;
+	left: 0px;
+	top: 225px;
+}
+
+
+/* EVENT WINDOW */
+
+.eventWindow {
+	display: none;
+	background-image: url(eventWindow_bg.png);
+	z-index: 12;
+	position: fixed;
+	width: 400px;
+	height: 600px;
+	top: 90px;
+	
+	opacity:0.9;
+	text-align: center;
+}
+
+.eventWindow:hover {
+	opacity:1;
+}
+
+#eventTitle {
+	color: red;
+	margin-top: 20px;
+	font-size:30px;
+	font-weight: bold;
+	width: 375px;
+	text-transform: uppercase;
+	display: inline-block;
+}
+
+#eventTitleBox {
+	display: inline-block;
+	width: 375px;
+	margin-bottom: 10px;
+}
+
+#eventPic {
+	width: 375px;
+	height: 150px;
+	margin-left: 12px;
+	margin-bottom: 12px;
+	background-image: url(eventPic1.png);
+	float: left;
+}
+
+#eventTextBox {
+	color: black;
+	text-align: left;
+	padding:15px;
+}
+
+#eventButtons {
+	
+}
+
+#eventButton1 {
+	width: 375;
+}
+
+#eventButton2 {
+	width: 375;
+}
+
+/* TOOLTIP */
+
+#tooltip {
+	background-color: black;
+	color:white;
+	z-index: 20;
+	position: absolute;
+	width: 215px;
+	float: left;
+	opacity:1;
+	text-align: left;
+	padding: 10px;
+}

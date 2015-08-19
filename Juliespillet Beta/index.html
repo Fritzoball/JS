@@ -1,0 +1,320 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta content='user-scalable=0' name='viewport' />
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="stylesheet" type="text/css" href="interface.css">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript" src="addclasskillclass.js"></script>
+	<title id="gameTitle">Juliespillet</title>
+<script type="text/javascript" src="attachevent.js"></script>
+<script type="text/javascript" src="addcss.js"></script>
+<script type="text/javascript" src="tabtastic.js"></script>
+<script src="fittext.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- NUMERAL JS -->
+<script src="numeral.js"></script>
+
+<!--MOMENT JS -->
+<script src="moment.js"></script>
+<!-- PARTICLE EMITTER -->
+<link rel="stylesheet" href="jquery.particles.burst.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="jquery.particles.burst.js"></script>
+
+
+</head>
+<body onload="draw(),hideTooltip(),closeEventWindow(),CheckDailyBonus(), load()">
+	<div id="bonusCounter"><progress max="10800" value="3074" id="bonusCounterBar"></div>
+	<div id="gameFrame" class="noselect">
+		<div id="bonusButton" onClick="clickDailyBonus(1)"></div>
+
+	<div id="toolbar">
+
+		<div id="toolbarContent">
+			<span id="tSoftness">0</span> MYK
+			<span id="tMoney" style="padding-left:2em">0</span> $$
+
+			<span id="holidaySoftness"> 0 PP</span>
+			<span id="holidayMoney"> 0 FP</span>
+			
+
+		</div>
+
+	</div>
+	<div id="header">
+	
+	<h1 id="gameTitle">Juliespillet</h1>
+	</div>
+	<div id="divider"> </div>
+	<div id="leftColumn">
+	<div id="infoBox">
+		<div id="tickleClickButton" onClick="clickTickleButton()"></div>
+		<span id="textTicker">"Gi meg en tikkel da vel"</span><br /><br />
+		<a href="#kosetid"><button class="modeButton" id="chillButton" onClick="setMode(1)"></button></a>
+		<a href="#jobbetid"><button class="modeButton" id="workButton" onClick="setMode(2)"></button></a><br/>
+		<div id="countDisplay">
+			<div id="mykDisplay">
+				<span id="softness">0</span> MYK<br/>
+				<span id="softnessMod">0</span><br/>
+			</div>
+			<div id="cashDisplay">
+				<span id="money">0</span> $$$<br/>
+				<span id="moneyMod">0</span><br/>
+			</div>
+		</div>
+		<!--<p>Behov:<br/>
+			Metthet: <progress id="hunger" value="10" max="100"></progress><span id="hungerMod">0</span>/s<br/>
+			Thirsty: <progress id="thirsty" value="10" max="100"></progress> <span id="thirstMod">0</span>/s<br/>
+		</p>-->
+
+	</div>
+	
+
+	<div id="upgradeBox">TEST </div>
+	<!-- STORE TAB -->
+	
+	<!-- STORE TAB -->
+	</div>
+	<!--RIGHT DIV -->
+
+	<div id="rightColumn">
+		<div id="chillStore">
+		<button class="itemButton" id="clothesButton" onClick="buyItem(clothes)">
+			<div id="button_left">
+				<span class="item_name">Myke Klær<br /></span>
+				<span id="clothes1price"class="item_price">1220</span>
+			</div>
+			
+			<div id="button_right">
+				<span id="clothesAmount" class="itemCount">xx</span>
+			</div>
+		</button>
+
+			
+		<button class="itemButton" id="berlinerButton" onClick="buyItem(berliner)">
+		<div id="button_left">
+			<span class="item_name">Berlinerboller<br /></span>
+			<span id="berlinerPrice" class="item_price">1220</span>
+		</div>
+			
+		<div id="button_right">
+			<span id="berlinerAmount" class="itemCount">xx</span>
+		</div>	
+		</button>
+			
+		<button class="itemButton" id="alkoholButton" onClick="buyItem(alkohol)">
+		<div id="button_left">
+			<span class="item_name">Tax-free<br /></span>
+			<span id="alkoholPrice" class="item_price">1220</span>
+		</div>
+		<div id="button_right">
+			<span id="alkoholAmount" class="itemCount">xx</span>
+		</div>
+		</button>
+			
+		<button class="itemButton" id="takeoutButton" onClick="buyItem(takeout)">
+		<div id="button_left">
+			<span class="item_name">Takeout<br /></span>
+			<span id="takeoutPrice" class="item_price">1220</span>
+		</div>
+		<div id="button_right">
+			<span id="takeoutAmount" class="itemCount">xx</span>
+		</div>
+		</button>
+		
+		<button class="itemButton" id="vacationButton" onClick="buyItem(vacation)">
+		<div id="button_left">
+			<span class="item_name">Miniferie<br /></span>
+			<span id="vacationPrice" class="item_price">1220</span>
+		</div>
+		<div id="button_right">
+			<span id="vacationAmount" class="itemCount">xx</span>
+		</div>
+		</button>
+		
+		<button class="itemButton" id="slaveButton" onClick="buyItem(slave)">
+		<div id="button_left">
+		<span class="item_name">Tikleslave<br /></span>
+		<span id="slavePrice" class="item_price">1220</span>
+		</div>
+		<div id="button_right">
+			<span id="slaveAmount" class="itemCount">xx</span>
+		</div>
+		</button>
+		</div>
+		<div id="storeContainer">
+		
+
+
+
+		<div id="workStore">
+		<button class="itemButton2" id="moreworkButton" onClick="buyItem(work1)">
+		<div id="button_left">
+		<span class="item_name">Ekstra oppgaver<br /></span>
+		<span id="work1price" class="item_price">10</span> 
+		</div>
+		<div id="button_right">
+			<span id="workAmount" class="itemCount">xx</span>
+		</div>
+		</button>
+		
+		<button class="itemButton2" id="extraFagButton" onClick="buyItem(extraFag)">
+		<div id="button_left">
+		<span class="item_name">Ekstra fag<br /></span>
+		<span id="extraFagPrice" class="item_price">10</span>
+		</div>
+		<div id="button_right">
+			<span id="extraFagAmount" class="itemCount">xx</span>
+		</div>
+		</button>
+		
+		<button class="itemButton2" id="weekendWorkButton" onClick="buyItem(weekendWork)">
+		<div id="button_left">
+		<span class="item_name">Ekstra Helgejobb<br /></span>
+		<span id="weekendWorkPrice" class="item_price">10</span>
+
+		</div>
+
+		<div id="button_right">
+			<span id="weekendWorkAmount" class="itemCount">xx</span>
+		</div>
+		</button>
+			
+		<button class="itemButton2" id="workCourseButton" onClick="buyItem(workCourse)">
+		<div id="button_left">
+		<span class="item_name">Jobbkurs<br /></span>
+		<span id="workCoursePrice" class="item_price">10</span>
+		</div>
+		<div id="button_right">
+			<span id="workCourseAmount" class="itemCount">xx</span>
+		</div>
+		</button>
+		
+		<button class="itemButton2" id="moreUsersButton" onClick="buyItem(moreUsers)">
+		<div id="button_left">
+		<span class="item_name">Flere brukere<br /></span>
+		<span id="moreUsersPrice" class="item_price">10</span>
+		</div>
+		<div id="button_right">
+			<span id="moreUsersAmount" class="itemCount">xx</span>
+		</div>
+		</button>
+		<button class="itemButton2" id="responsibilityButton" onClick="buyItem(responsibility)">
+		<div id="button_left">
+		<span class="item_name">Mer ansvar<br /></span>
+		<span id="responsibilityPrice" class="item_price">10</span>
+		</div>
+		<div id="button_right">
+			<span id="responsibilityAmount" class="itemCount">xx</span>
+		</div>	
+		</button>
+		
+		</div>
+		<div id="statButton" onclick="toggleStats();"><span id="statButtonText">>STATS</span></div>
+		<div id="statisticWindow">
+			<div class="statistic">
+			Total MYK: <span id="softnessTotal">1000</span>
+			</div>
+			<div class="statistic">
+			Total $$$: <span id="moneyTotal">1000</span>
+			</div>
+			<div class="statistic">
+			Total klikk: <span id="clickTotal">1000</span>
+			</div>
+		</div>
+
+	</div>
+	
+	<div id="debugWindow">
+	<button id="eventSpawner" onClick="spawnEvent(events.event10)">Spawn en event</button>
+	<span id="softnessTotal"> 1234 </span>
+	<button onClick="selectHoliday(1)">test</button>
+	<button class="itemButton" id="save" onClick="save()">
+			SAVE
+			</button>
+			<button class="itemButton" id="load" onClick="load()">
+			LOAD
+			</button>
+			<button class="itemButton" id="load" onClick="clearSave()">
+			DELETE
+			</button>
+			<br/> 
+			<button class="upgradeButton" id="bonus1Button" onClick="console.log(uWork2);addSoftness(50000000),addMoney(50000000)" onmouseover="showTooltip('Koster 1000 MYK <br/> 1000 $$$')" onmouseout="hideTooltip()"> </button>
+
+			<button class="itemButton" id="save" onClick="saveForHoliday(1)">
+			SAVE
+			</button>
+
+	</div>	
+
+	<!-- BONUS WINDOW -->
+	<div id="bonusWindow" class="bonusWindow">
+		<div id="bonusWindowPic"><progress max="12" value="13" id="bonusWindowPicTimer"></progress></div>
+		
+		<div id="bonusWindowConfirm">
+			<p style="font-size:20px;">Vil du se en "reklame" og aktivere en bonus?</p>
+			<p>Bonusen gir deg 1.5x av alt og varer i 3 timer<br/>
+			Du har <span id="bonusLeft">4</span> igjen i dag
+			<p>
+			<button id="activateBonus" onClick="clickDailyBonus(2)">JA</button>
+			<button onClick="clickDailyBonus(3)">NEI</button>
+
+		</div>
+	</div>
+
+
+
+	<!-- HOLIDAY MODE -->
+
+	<div id="holidaySelect"> 
+		VELG FERIE HER
+		<br>
+		<button id="holidayWeekendTrip" onClick="selectHoliday(2)">Helgetur 20 PP & 20 FP</button>
+		<button id="closeHolidayWindow" onClick="selectHoliday(0)">Lukk vinduet</button>
+	</div>
+
+	<div id="holidayWindow"> 
+		DU ER NÅ PÅ FERIE
+		<button id="closeHolidayWindow2" onClick="selectHoliday(3)">Lukk vinduet</button>
+	</div>
+
+	<!-- EVENT WINDOW -->
+
+	<div id="eventWindow" class="eventWindow">
+		<div id="eventTitleBox">
+		<span id="eventTitle">KRISE PÅ JOBBEN</span>
+		</div>
+		<div id="eventPic"></div>
+		<div id="eventTextBox">
+			<span id="eventText">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae neque nec quam mattis sagittis sed nec eros. Phasellus varius ultrices eros, at egestas risus sollicitudin nec. Duis ante mi, mattis et auctor in, consectetur at orci. Cras volutpat bibendum ante, eget facilisis tellus elementum non.
+			</span>
+		</div>
+		<div id="eventButtons">
+			<button type="button" id="eventButton1" onmouseover="showTooltip()" onmouseout="hideTooltip()">Jeg velger det første</button><br/><br/>
+			<button type="button" id="eventButton2"  onmouseout="hideTooltip()">Jeg velger det andre</button>
+		</div>
+	</div>
+
+	<!-- TOOLTIP -->
+
+	<div id="tooltip">
+		<span id="tooltipText">Få 10% ekstra MYK i sekundet.</span>
+	</div>
+
+	<!-- SCRIPT -->
+	<script type="text/javascript" src="events.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	
+</div>
+
+</div>
+<div id="footer">
+	v 1.0 ©Drittolay
+</div>
+</body>
+</html>
